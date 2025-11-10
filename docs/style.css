@@ -1,0 +1,102 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+}
+
+header .logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: #1a2a6c;
+}
+
+/* Hero */
+.hero {
+    background: url("https://source.unsplash.com/1600x400/?mountains") center/cover no-repeat;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+/* Intro */
+.intro {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f0f0f0;
+}
+
+.intro h2 {
+    margin-bottom: 15px;
+    color: #1a2a6c;
+}
+
+/* SAE */
+.sae {
+    padding: 40px 20px;
+    background-color: white;
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.sae h3 {
+    margin-bottom: 20px;
+    color: #1a2a6c;
+}
+
+.sae-content p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1a2a6c;
+    color: white;
+    margin-top: 40px;
+}
