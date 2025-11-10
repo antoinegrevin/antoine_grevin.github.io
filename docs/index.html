@@ -3,77 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Antoine Grévin</title>
+    <title>Portfolio – Antoine Grévin</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="logo">Grévin Antoine</div>
+        <div class="identity">
+            <div class="avatar">AG</div>
+            <div class="logo">Antoine Grévin</div>
+        </div>
         <nav>
             <ul>
-                <li><a href="#sem1">Administrer </a></li>
-                <li><a href="#sem2">Connecter </a></li>
-                <li><a href="#sem3">Programmer </a></li>
-                <li><a href="#sem4">Sécuriser </a></li>
-                <li><a href="#sem5">Surveiller </a></li>
+                <li><a href="#sem1">Administrer</a></li>
+                <li><a href="#sem2">Connecter</a></li>
+                <li><a href="#sem3">Programmer</a></li>
+                <li><a href="#sem4">Sécuriser</a></li>
+                <li><a href="#sem5">Surveiller</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>Portfolio</h1>
+        <h1>Portfolio Réseaux & Télécommunications</h1>
+        <p class="subhead">Étudiant à l’IUT de Béthune – Université d’Artois</p>
     </section>
 
     <section class="intro">
-        <h2>Bonjour,</h2>
+        <h2>Bienvenue</h2>
         <p>
-            Je m'appelle <b>Antoine Grévin</b>, je suis étudiant de première année en réseaux et télécommunications 
-            à l’Institut Universitaire de Technologie de Béthune compris dans l’Université d’Artois.
+            Je m'appelle <b>Antoine Grévin</b>, étudiant en première année de BUT Réseaux & Télécoms à l'Université d'Artois – IUT de Béthune.
+            <br>
+            Passionné par les technologies, je développe des compétences en cybersécurité, administration systèmes et réseaux, programmation et gestion de projets IT.
         </p>
     </section>
 
     <main>
-        <section id="sem1" class="semestre">
-            <h2>Compétence Administrer</h2>
+        <div class="competences">
 
-            <h3>SAE1.01 - Se sensibiliser à l'hygiène informatique et à la cybersécurité</h3>
-            <p>J’ai suivi le MOOC proposé par l’ANSSI et le cours "Introduction à la cybersécurité" sur Netacad. Ces cours m’ont permis d’acquérir des notions sur les risques numériques, les bonnes pratiques de sécurité et les contre-mesures adaptées. J’ai obtenu les attestations de réussite pour ces deux formations.</p>
-            <p>Compétences acquises : bonnes pratiques, risques numériques, mesures de protection, communication adaptée et utilisation des outils numériques.</p>
-            <p>Objectif : se mettre dans la peau d’un Responsable de la Sécurité des Systèmes d’Information (RSSI) et sensibiliser le personnel aux risques numériques.</p>
-            <p>Difficultés : aucune particulière.</p>
-            <p>Auto-évaluation : A B C D</p>
-        </section>
+            <section id="sem1" class="semestre card">
+                <h2>Administrer</h2>
+                <h3>SAE 1.01 – Hygiène informatique & cybersécurité</h3>
+                <ul>
+                    <li>Formation suivie : MOOC ANSSI, cours “Introduction à la cybersécurité” (Netacad)</li>
+                    <li>Compétences : bonnes pratiques, gestion des risques numériques, plan de protection, sensibilisation utilisateur</li>
+                    <li>Objectif : Analyser et sensibiliser au rôle de RSSI, mettre en place une politique sécurité</li>
+                </ul>
+                <div class="eval">
+                    <span>Difficulté : </span>aucune particulière<br>
+                    <span>Auto-évaluation : </span><b>A</b>
+                </div>
+            </section>
 
+            <section id="sem2" class="semestre card">
+                <h2>Connecter</h2>
+                <h3>SAE 2.01 – Construire un réseau pour une structure</h3>
+                <ul>
+                    <li>Configuration des équipements, services (dont partages inter-OS)</li>
+                    <li>Déploiement & sécurisation d’une infrastructure réseau locale (câblage, VLAN, routage, firewall, Docker)</li>
+                    <li>Travail en équipe, gestion de projet, documentation technique</li>
+                </ul>
+                <div class="eval">
+                    <span>Difficulté : </span>Appropriation des outils réseaux hétérogènes<br>
+                    <span>Auto-évaluation : </span><b>B</b>
+                </div>
+            </section>
 
-        <section id="sem2" class="semestre">
-            <h2>Compétence Connecter</h2>
+            <section id="sem3" class="semestre card">
+                <h2>Programmer</h2>
+                <h3>Développement & automatisation</h3>
+                <ul>
+                    <li>Traitement de données</li>
+                    <li>Scripting (Python, Bash)</li>
+                    <li>Visualisation et automatisation de tâches</li>
+                </ul>
+                <div class="eval">
+                    <span>Difficulté : </span>Adaptation aux nouveaux langages<br>
+                    <span>Auto-évaluation : </span><b>B</b>
+                </div>
+            </section>
 
-            <h3>SAE2.01 - Construire un réseau informatique pour une petite structure</h3>
-            <p>Difficultés : configuration des équipements réseau et services comme les partages entre OS différents.</p>
-            <p>Compétences acquises : conception, déploiement et sécurisation d’infrastructure réseau complète, configuration système, administration réseau, Docker, sécurité, travail collaboratif.</p>
-            <p>Durée : 1 semaine.</p>
-        </section>
+            <section id="sem4" class="semestre card">
+                <h2>Sécuriser</h2>
+                <p>Contenu du semestre à venir…</p>
+            </section>
 
-        <section id="sem3" class="semestre">
-            <h2>Compétence Programmer</h2>
-            <p>Contenu du semestre 3 : compétences en manipulation des données, développement automatisé et visualisations de données.</p>
-        </section>
-
-        <section id="sem4" class="semestre">
-            <h2>Compétence Sécuriser</h2>
-            <p>Contenu du semestre 4 à compléter.</p>
-        </section>
-
-        <section id="sem5" class="semestre">
-            <h2>Compétence Surveiller</h2>
-            <p>Contenu du semestre 5 à compléter.</p>
-        </section>
-
-
+            <section id="sem5" class="semestre card">
+                <h2>Surveiller</h2>
+                <p>Contenu du semestre à venir…</p>
+            </section>
+        </div>
     </main>
 
     <footer>
-        <p>© 2025 - Antoine Grévin | Portfolio</p>
+        <div>
+            © 2025 – Antoine Grévin &middot; Portfolio personnel
+        </div>
     </footer>
 </body>
 </html>
