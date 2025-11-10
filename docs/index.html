@@ -33,73 +33,232 @@
     <section class="intro">
         <h2>Bienvenue</h2>
         <p>
-            Je m'appelle <b>Antoine Grévin</b>, étudiant en première année de BUT Réseaux & Télécoms à l'Université d'Artois – IUT de Béthune.
+            Je m'appelle <b>Antoine Grévin</b>, étudiant en BUT Réseaux & Télécoms à l'Université d'Artois – IUT de Béthune.
             <br>
-            Passionné par les technologies, je développe des compétences en cybersécurité, administration systèmes et réseaux, programmation et gestion de projets IT.
+            Ce portfolio présente mes compétences et expériences acquises dans le cadre du parcours Cybersécurité, via les différentes SAE et projets.
         </p>
     </section>
 
     <main>
-        <div class="competences">
+      <div class="competences">
 
-            <section id="sem1" class="semestre card">
-                <h2>Administrer</h2>
-                <h3>SAE 1.01 – Hygiène informatique & cybersécurité</h3>
+        <!-- ADMINISTRER -->
+        <section id="sem1" class="semestre card">
+            <h2>Administrer</h2>
+            <button class="accordion">Voir détails du référentiel officiel</button>
+            <div class="panel">
+                <h3>B.U.T. Réseaux & Télécommunications – Parcours Cybersécurité</h3>
                 <ul>
-                    <li>Formation suivie : MOOC ANSSI, cours “Introduction à la cybersécurité” (Netacad)</li>
-                    <li>Compétences : bonnes pratiques, gestion des risques numériques, plan de protection, sensibilisation utilisateur</li>
-                    <li>Objectif : Analyser et sensibiliser au rôle de RSSI, mettre en place une politique sécurité</li>
+                    <li>Administrer réseaux et Internet selon :
+                        <ul>
+                            <li>CE1.01 : solutions et technologies réseaux adaptées</li>
+                            <li>CE1.02 : respect des principes de sécurité</li>
+                            <li>CE1.03 : approche rigoureuse pour résoudre les incidents</li>
+                            <li>CE1.04 : respect des règles métiers</li>
+                            <li>CE1.05 : veille technologique</li>
+                        </ul>
+                    </li>
                 </ul>
-                <div class="eval">
-                    <span>Difficulté : </span>aucune particulière<br>
-                    <span>Auto-évaluation : </span><b>A</b>
-                </div>
-            </section>
-
-            <section id="sem2" class="semestre card">
-                <h2>Connecter</h2>
-                <h3>SAE 2.01 – Construire un réseau pour une structure</h3>
+                <b>Situations pro :</b> <br>
+                Conception et administration d’infrastructure réseau, installation/gestion des services, déploiement de solutions fixes pour clients opérateur...<br>
+                <b>Niveaux et apprentissages critiques :</b>
                 <ul>
-                    <li>Configuration des équipements, services (dont partages inter-OS)</li>
-                    <li>Déploiement & sécurisation d’une infrastructure réseau locale (câblage, VLAN, routage, firewall, Docker)</li>
-                    <li>Travail en équipe, gestion de projet, documentation technique</li>
+                  <li><b>Niveau 1 :</b> Assistance à l’admin réseau (maîtrise de l’électricité, systèmes numériques, configuration réseau local...)</li>
+                  <li><b>Niveau 2 :</b> Administrer un réseau (routage dynamique, politiques QoS/sécurité réseau, virtualisation, services avancés...)</li>
+                  <li><b>Niveau 3 :</b> Concevoir un réseau (projet complet, documentation, maquette, supervision, gestion d’équipe...)</li>
                 </ul>
-                <div class="eval">
-                    <span>Difficulté : </span>Appropriation des outils réseaux hétérogènes<br>
-                    <span>Auto-évaluation : </span><b>B</b>
-                </div>
-            </section>
+                <p class="referentiel-source">
+                  <a href="http://www.enseignementsup-recherche.gouv.fr" target="_blank" rel="noopener">Source : Référentiel Ministère 2022</a>
+                </p>
+            </div>
 
-            <section id="sem3" class="semestre card">
-                <h2>Programmer</h2>
-                <h3>Développement & automatisation</h3>
+            <!-- Vécu SAE (PERSONNEL) -->
+            <div class="sae-bloc">
+                <h4>SAE1.01 - Se sensibiliser à l'hygiène informatique et à la cybersécurité</h4>
                 <ul>
-                    <li>Traitement de données</li>
-                    <li>Scripting (Python, Bash)</li>
-                    <li>Visualisation et automatisation de tâches</li>
+                    <li>Formations suivies : MOOC ANSSI, Netacad</li>
+                    <li>Compétences : bonnes pratiques, risques, mesures de protection, communication</li>
+                    <li>Objectif : Simuler le rôle de RSSI, sensibiliser les personnels aux risques numériques</li>
+                    <li>Mise en pratique : Présentation des “4 bonnes pratiques”, travail en binôme sur 1 mois</li>
+                    <li>Difficultés rencontrées : aucune particulière</li>
+                    <li>Auto-évaluation : <strong>A</strong></li>
                 </ul>
-                <div class="eval">
-                    <span>Difficulté : </span>Adaptation aux nouveaux langages<br>
-                    <span>Auto-évaluation : </span><b>B</b>
-                </div>
-            </section>
+            </div>
+            <div class="sae-bloc">
+                <h4>SAE1.02 - S'initier aux réseaux informatiques</h4>
+                <ul>
+                    <li>Objectif : Comprendre et mettre en œuvre un réseau, configuration postes et équipements (VLAN, DNS, DHCP)</li>
+                    <li>Mise en pratique : Conception/configuration/test, projet d’1 mois 2 semaines</li>
+                    <li>Difficultés : gestion des VLAN, reconfiguration Switchs</li>
+                    <li>Auto-évaluation : <strong>A</strong></li>
+                </ul>
+            </div>
+            <div class="sae-bloc">
+                <h4>SAE1.03 - Découvrir un dispositif de transmission</h4>
+                <ul>
+                    <li>Découverte et utilisation : Matlab Simulink</li>
+                    <li>Problèmes rencontrés : erreurs d’utilisation du logiciel au début (signaux incorrects)</li>
+                    <li>Compétences : Analyse/conception de systèmes, maîtrise de signaux</li>
+                    <li>Auto-évaluation : <strong>A</strong></li>
+                </ul>
+            </div>
+            <div class="sae-bloc">
+                <h4>SAE1.04 - Se présenter sur Internet</h4>
+                <ul>
+                    <li>Création d’un site web responsive, projet sur 4 séances</li>
+                    <li>Compétences : HTML/CSS, frameworks CSS, gestion de contenu dynamique</li>
+                    <li>Difficulté : aucune</li>
+                    <li>Auto-évaluation : <strong>A</strong></li>
+                </ul>
+            </div>
+            <div class="sae-bloc">
+                <h4>SAE1.05 - Traiter des données</h4>
+                <ul>
+                    <li>Traitement, transformation, envoi automatisé de données</li>
+                    <li>Problèmes : gestion de données erronées, temps</li>
+                    <li>Compétences : gestion/traitement de données, automatisation, travail d’équipe</li>
+                    <li>Auto-évaluation : <strong>A</strong></li>
+                </ul>
+            </div>
+        </section>
 
-            <section id="sem4" class="semestre card">
-                <h2>Sécuriser</h2>
-                <p>Contenu du semestre à venir…</p>
-            </section>
+        <!-- CONNECTER -->
+        <section id="sem2" class="semestre card">
+            <h2>Connecter</h2>
+            <button class="accordion">Voir détails du référentiel officiel</button>
+            <div class="panel">
+                <ul>
+                    <li>Connecter entreprises et usagers :
+                        <ul>
+                            <li>CE2.01 : communication avec acteurs (fr/en)</li>
+                            <li>CE2.02 : démarche scientifique</li>
+                            <li>CE2.03 : choix technos adaptées</li>
+                            <li>CE2.04 : solutions éco-responsables</li>
+                        </ul>
+                    </li>
+                </ul>
+                Professions : <br>
+                Déploiement supports, administration accès fixe/mobile/opérateur, sans-fil...
+                <ul>
+                    <li><b>Niveaux 1-3</b> : mesures et analyse de signaux, déploiement ToIP/sans-fil, sécurisation accès distant, multi-site, gestion projet en français/anglais</li>
+                </ul>
+            </div>
+            <div class="sae-bloc">
+                <h4>SAE2.01 - Construire un réseau pour une petite structure</h4>
+                <ul>
+                    <li>Difficulté : configuration des équipements réseau, partages multi-OS</li>
+                    <li>Compétences : conception/déploiement/sécurisation réseau, administration système, Docker, sécurité, documentation</li>
+                </ul>
+            </div>
+            <div class="sae-bloc">
+                <h4>SAE2.02 - Mesurer et caractériser un signal ou un système</h4>
+                <ul>
+                    <li>Analyse & caractérisation de signaux avec analyseurs de spectre et logiciels</li>
+                    <li>Difficultés : conception filtres numériques, interprétation spectre fréquence</li>
+                    <li>Compétences : analyse spectrale, traitement du signal</li>
+                </ul>
+            </div>
+            <div class="sae-bloc">
+                <h4>SAE2.03 - Mettre en place une solution informatique pour l'entreprise</h4>
+                <ul>
+                    <li>Développement et déploiement site portfolio (Flask, BDD, Docker)</li>
+                    <li>Difficulté : configuration inter-conteneurs Docker</li>
+                    <li>Compétences : dev web, base de données, conteneurisation</li>
+                </ul>
+            </div>
+            <div class="sae-bloc">
+                <h4>SAE2.04 – Projet intégratif</h4>
+                <ul>
+                    <li>Conception globale architecture réseau, équipements, services virtualisés</li>
+                    <li>Compétences : administration réseau, virtualisation, sécurité, IoT, téléphonie IP</li>
+                </ul>
+            </div>
+        </section>
 
-            <section id="sem5" class="semestre card">
-                <h2>Surveiller</h2>
-                <p>Contenu du semestre à venir…</p>
-            </section>
-        </div>
+        <!-- PROGRAMMER -->
+        <section id="sem3" class="semestre card">
+            <h2>Programmer</h2>
+            <button class="accordion">Voir détails du référentiel officiel</button>
+            <div class="panel">
+                <ul>
+                    <li>Créer outils/applications pour R&T :
+                        <ul>
+                            <li>CE3.01 : écoute client</li>
+                            <li>CE3.02 : documentation</li>
+                            <li>CE3.03 : usage raisonné d’outils numériques</li>
+                            <li>CE3.04 : choix techs de développement adaptées</li>
+                            <li>CE3.05 : sécurité intégrée</li>
+                        </ul>
+                    </li>
+                </ul>
+                <b>Niveaux 1-3 :</b> s’intégrer dans un service, automatiser admin système, développer applications, piloter projet, sécurité numérique…
+            </div>
+            <div class="sae-bloc">
+                <p>Manipulation des données, développement automatisé, visualisations de données, scripts, automatisations (Python, Bash).</p>
+            </div>
+        </section>
+
+        <!-- SECURISER -->
+        <section id="sem4" class="semestre card">
+            <h2>Sécuriser</h2>
+            <button class="accordion">Voir détails du référentiel officiel</button>
+            <div class="panel">
+                <ul>
+                    <li>Administrer un SI sécurisé :
+                        <ul>
+                            <li>CE4.01 : équilibre sécurité/usage</li>
+                            <li>CE4.02 : conformité légale</li>
+                            <li>CE4.03 : intégration techno récente</li>
+                            <li>CE4.04 : travail d’équipe</li>
+                            <li>CE4.05 : sensibilisation usagers</li>
+                        </ul>
+                    </li>
+                </ul>
+                <b>Niveaux 1-2 :</b> sensibiliser vulnérabilités, remédiation, cryptographie, sécuriser SI, analyse de risques, architecture sécurisée, conformité.
+            </div>
+        </section>
+
+        <!-- SURVEILLER -->
+        <section id="sem5" class="semestre card">
+            <h2>Surveiller</h2>
+            <button class="accordion">Voir détails du référentiel officiel</button>
+            <div class="panel">
+                <ul>
+                    <li>Surveiller un SI sécurisé :
+                        <ul>
+                            <li>CE5.01 : veille continue</li>
+                            <li>CE5.02 : mises à jour critiques</li>
+                            <li>CE5.03 : automatisation</li>
+                            <li>CE5.04 : esprit d’équipe</li>
+                            <li>CE5.05 : monitoring réseau</li>
+                            <li>CE5.06 : conformité contractuelle</li>
+                        </ul>
+                    </li>
+                </ul>
+                <b>Niveaux 1-2 :</b> prise en main outils, tests, surveillance incidents sécurité, audit, gestion d’incidents, pentest, administration et outils surveillance.
+            </div>
+        </section>
+
+      </div>
     </main>
 
     <footer>
-        <div>
-            © 2025 – Antoine Grévin &middot; Portfolio personnel
-        </div>
+        <div>© 2025 – Antoine Grévin &middot; Portfolio personnel</div>
     </footer>
+    <script>
+        // Simple accordion
+        const acc = document.querySelectorAll(".accordion");
+        acc.forEach(btn => {
+            btn.onclick = function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight){
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            }
+        });
+    </script>
 </body>
 </html>
