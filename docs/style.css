@@ -1,61 +1,53 @@
-/* ... (garde l’existant) ... */
-
-/* Accordion style for referentiel blocks */
-.accordion {
-  background-color: #ecf7fc;
-  color: #0078d4;
-  cursor: pointer;
-  padding: 8px 16px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: background 0.3s;
-  border-radius: 7px;
-  margin-bottom: .3rem;
-  font-size: 1rem;
-  font-weight: 500;
-}
-.accordion.active, .accordion:hover {
-  background-color: #c0e7ff;
-}
-.panel {
-  padding: 0 1rem;
-  background: #fafdff;
-  border-radius: 7px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.42s cubic-bezier(0,1,0,1);
-  margin-bottom: 1.2rem;
-  font-size: 0.98rem;
-}
-.panel ul, .panel li {
-  margin: 0.19rem 0 0 0;
-  padding: 0.1rem 0 0 1.1rem;
-  list-style: disc;
+/* ========== GLOBAL ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.sae-bloc {
-  background: #f3f5fa;
-  border-left: 3.2px solid #0078d4;
-  margin: .69rem 0;
-  border-radius: 7px;
-  padding: 0.89rem 1.1rem 0.54rem 1.1rem;
-}
-.sae-bloc h4 {
-    margin: 0 0 0.1rem 0;
-    color: #374760;
-    font-size: 1.07rem;
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f4f4f4;
+    color: #222;
+    line-height: 1.6;
 }
 
-/* Pour la source du référentiel */
-.referentiel-source {
-  margin: .51rem 0 0 0;
-  font-size: .94rem;
-  color: #92a1b1;
+/* ========== HEADER ========== */
+header {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-@media (max-width: 650px) {
-  .accordion { font-size: .96rem; }
-  .panel { font-size: 0.96rem; padding: 0 0.3rem; }
+.identity {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    background: #007bff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* NAV */
+nav u
