@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
@@ -37,9 +36,8 @@
   <h2>Bienvenue</h2>
   <p>
     Je m'appelle <b>Antoine Grévin</b>, étudiant en BUT Réseaux & Télécoms à l'Université d'Artois – IUT de Béthune.
-    <br>
     Ce portfolio présente les compétences développées au semestre 4 dans le cadre du parcours Cybersécurité,
-    à travers les SAE, les projets et mon stage professionnel.
+    à travers les SAE, les projets et mon stage professionnel à la CASQ.
   </p>
 </section>
 
@@ -60,48 +58,86 @@
         <li class="ac-item">
           <button class="ac-accordion">AC21.01 | Configurer et dépanner le routage dynamique dans un réseau</button>
           <div class="ac-panel">
-            <p>Durant mon stage à la CASQ, j'ai participé à la configuration de commutateurs réseau (switchs) du parc de l'agglomération : accès SSH aux équipements, modification des configurations VLAN et sauvegarde des configurations courantes. Ces manipulations m'ont permis d'appréhender concrètement la gestion de parc réseau dans un contexte professionnel réel.</p>
-            <p>En cours, j'ai également mis en pratique le routage dynamique (OSPF, RIP) sur Cisco Packet Tracer, en configurant plusieurs routeurs interconnectés et en analysant la convergence des tables de routage.</p>
+            <p>Dans le cadre de la <strong>SAE 4.Cyber.01 – Sécuriser un système d'information</strong>, j'ai conçu et configuré une infrastructure réseau deux sites sur Cisco Packet Tracer intégrant du routage inter-VLAN et un tunnel IPsec GRE pour relier les deux sites. J'ai configuré les tables de routage statiques et vérifié la connectivité de bout en bout entre tous les VLANs.</p>
+            <p>Durant mon <strong>stage à la CASQ (DINMI)</strong>, j'ai également participé à une session de configuration de commutateurs réseau du parc de l'agglomération : connexion SSH aux équipements, modification des configurations VLAN et sauvegarde des configurations courantes. Cela m'a permis d'appréhender concrètement la gestion de parc réseau en situation professionnelle réelle.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Configuration d'un réseau deux sites avec VLANs (Admin, Service, Production) sur Packet Tracer, mise en place d'un tunnel GRE IPsec entre les deux routeurs, et administration SSH de switchs réels en entreprise.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>La différence entre configurer un équipement en simulation et en production réelle est significative : en entreprise, chaque modification sur un switch actif peut impacter des dizaines d'utilisateurs. La sauvegarde de la configuration avant toute intervention est un réflexe indispensable.</p>
+            </div>
           </div>
         </li>
 
         <li class="ac-item">
           <button class="ac-accordion">AC21.02 | Configurer et expliquer une politique simple de QoS et les fonctions de base de la sécurité d'un réseau</button>
           <div class="ac-panel">
-            <p>Lors de mon analyse de la topologie IoT de la CASQ, j'ai identifié plusieurs lacunes de sécurité réseau : le protocole MQTT en configuration standard ne chiffre pas les communications en transit, exposant les données des capteurs sur un réseau non maîtrisé.</p>
-            <p>J'ai produit une note de synthèse recommandant MQTT over TLS (port 8883), l'authentification par certificats X.509, et la mise en place de VLANs dédiés pour isoler les segments OT des protocoles industriels (BACnet, KNX, Modbus) non chiffrés nativement.</p>
+            <p>Dans la <strong>SAE 4.Cyber.01</strong>, j'ai mis en place une politique de sécurité réseau sur un pare-feu Cisco ASA simulé : définition d'ACL (Access Control Lists) pour filtrer les flux entre les VLANs Admin, Service et Production, et configuration des règles d'inspection des connexions entrantes/sortantes.</p>
+            <p>Lors de mon <strong>stage à la CASQ</strong>, j'ai conduit une analyse de sécurité de la topologie IoT proposée. J'ai identifié que le protocole MQTT en configuration standard ne garantit aucun chiffrement en transit : sur un réseau non maîtrisé, les données des capteurs et les credentials circulent en clair. J'ai formulé des recommandations concrètes : MQTT over TLS sur le port 8883, certificats X.509 pour l'authentification des clients, VLAN dédié pour isoler les segments OT.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Configuration d'ACL sur ASA en SAE, et analyse critique de la topologie IoT en stage avec production d'une note de synthèse sécurité par domaine (infrastructure, middleware, couche OT/IT, APIs tierces).</p>
+              <p class="rlabel">Mes difficultés</p>
+              <p>La difficulté principale était de comprendre l'ordre d'évaluation des règles ACL sur ASA : une règle trop permissive placée avant une règle restrictive annule l'effet de cette dernière. En stage, la difficulté était de formuler des recommandations réalistes adaptées aux contraintes d'un territoire public (budget, marchés publics).</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>Qu'une politique de sécurité réseau n'est efficace que si elle est pensée globalement : sécuriser uniquement la couche IP sans traiter les protocoles applicatifs (MQTT non chiffré) laisse une surface d'attaque béante.</p>
+            </div>
           </div>
         </li>
 
         <li class="ac-item">
           <button class="ac-accordion">AC21.03 | Déployer des postes clients et des solutions virtualisées adaptées à une situation donnée</button>
           <div class="ac-panel">
-            <p>Dans le cadre de l'infrastructure IoT de la CASQ, j'ai déployé et configuré des instances cloud virtualisées : instance Node-RED sur FlowFuse (cloud), instance n8n self-hosted sur Render, base de données PostgreSQL sur Supabase, et interface web Next.js sur Vercel.</p>
-            <p>J'ai résolu des problématiques concrètes de déploiement : persistance des données sur Render (migration SQLite → PostgreSQL externe), connectivité réseau IPv4/IPv6 via Session Pooler Supabase, et configuration correcte du preset de framework sur Vercel.</p>
+            <p>En cours et en TD, j'ai déployé et configuré des machines virtuelles Linux (Ubuntu, Debian) sous VirtualBox et VMware pour les TP de sécurité et de réseaux : configuration des interfaces réseau, installation de services (SSH, Apache, DNS), et mise en réseau de plusieurs VMs.</p>
+            <p>Durant mon <strong>stage à la CASQ</strong>, j'ai déployé et configuré plusieurs instances cloud : instance Node-RED sur FlowFuse (cloud), instance n8n self-hosted sur Render, base de données PostgreSQL sur Supabase, et interface web Next.js sur Vercel. J'ai résolu des problèmes concrets de déploiement cloud : persistance des données après redémarrage (migration SQLite → PostgreSQL externe via variables d'environnement <code>DB_POSTGRESDB_*</code>), problème de connectivité IPv4/IPv6 (résolu par Session Pooler Supabase), et erreur 404 au déploiement Vercel (preset framework mal configuré).</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Déploiement de VMs locales en cours, et déploiement d'une stack cloud complète en stage : n8n (Render) + PostgreSQL (Supabase) + Next.js (Vercel) avec résolution de problèmes de production réels.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>Les offres cloud gratuites imposent des contraintes spécifiques (réinitialisation du système de fichiers à chaque redémarrage sur Render, IPv6 uniquement sans Session Pooler). Il faut toujours vérifier les limitations de l'offre avant de commencer à construire dessus.</p>
+            </div>
           </div>
         </li>
 
         <li class="ac-item">
           <button class="ac-accordion">AC21.04 | Déployer des services réseaux avancés</button>
           <div class="ac-panel">
-            <p>J'ai déployé et interconnecté une stack complète de services réseau lors de mon stage : ChirpStack (Network Server LoRaWAN) pour le déchiffrement et le routage des trames capteurs, Eclipse Mosquitto (broker MQTT) comme bus de données central, InfluxDB pour le stockage temporel des métriques, et Grafana pour la visualisation et l'alerting.</p>
-            <p>J'ai également mis en place un bot Telegram de supervision connecté aux flux Node-RED, ainsi qu'un serveur MCP (Model Context Protocol) pour l'interaction avec des agents IA.</p>
+            <p>En <strong>R401 (Infrastructures de Sécurité)</strong>, j'ai étudié et configuré des services réseau avancés : pare-feu Stormshield/ASA (règles de filtrage, NAT, inspection applicative), VPN IPsec site-à-site, serveurs DNS/DHCP sous Linux, et principes MPLS.</p>
+            <p>Durant mon <strong>stage à la CASQ</strong>, j'ai déployé et interconnecté une stack complète de services IoT : <strong>ChirpStack</strong> (Network Server LoRaWAN) pour le déchiffrement et le routage des trames capteurs, <strong>Eclipse Mosquitto</strong> (broker MQTT) comme bus de données central publish/subscribe, <strong>InfluxDB v2</strong> pour le stockage temporel des métriques, et <strong>Grafana</strong> pour la visualisation et l'alerting. J'ai également intégré un bot Telegram de supervision connecté aux flux Node-RED via requêtes HTTP POST vers l'API Bot Telegram.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Configuration de pare-feux et VPNs en cours, et déploiement d'une stack IoT complète (ChirpStack → Mosquitto → Node-RED → InfluxDB → Grafana) avec supervision Telegram en stage.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>L'importance de comprendre le rôle de chaque brique dans la chaîne avant de la déployer. ChirpStack, par exemple, ne fait pas que recevoir des trames : il les déchiffre, les déduplique (une trame peut être captée par plusieurs passerelles simultanément) et applique l'ADR (Adaptive Data Rate).</p>
+            </div>
           </div>
         </li>
 
         <li class="ac-item">
           <button class="ac-accordion">AC21.05 | Identifier les réseaux opérateurs et l'architecture d'Internet</button>
           <div class="ac-panel">
-            <p>Le projet IoT Smart City de la CASQ m'a permis d'appréhender l'architecture LoRaWAN de bout en bout : end-devices (capteurs Milesight), passerelles (gateways UG65) transmettant les trames via UDP (Semtech Packet Forwarder), et Network Server ChirpStack assurant le déchiffrement, la déduplication et le routage applicatif.</p>
-            <p>J'ai également été confronté aux problématiques d'adressage réseau réel : gestion IPv4/IPv6, résolution DNS, ports de service (1883 MQTT, 8883 MQTTS, 5432 PostgreSQL) et architecture des APIs REST modernes.</p>
+            <p>En cours de <strong>R403 (Physique des Télécoms)</strong>, j'ai étudié les architectures des réseaux cellulaires (2G à 5G), les interfaces radio, les réseaux d'accès opérateurs (xDSL, fibre, câble) et les principes fondamentaux du routage Internet (BGP, AS, peering).</p>
+            <p>Le projet IoT Smart City de la <strong>CASQ</strong> m'a permis d'appréhender une architecture réseau opérateur réelle : le réseau LoRaWAN se compose de end-devices (capteurs Milesight), de passerelles (gateways UG65) qui collectent les trames radio et les transmettent au Network Server via UDP (Semtech Packet Forwarder), et de ChirpStack qui assure la couche réseau. J'ai également géré des problématiques d'adressage réelles : connectivité IPv4/IPv6, résolution DNS, ports de service standards (1883 MQTT, 8883 MQTTS, 5432 PostgreSQL).</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Étude des architectures opérateurs en cours, et manipulation d'un réseau LoRaWAN réel en stage avec gestion des problématiques d'adressage IPv4/IPv6 sur des services cloud.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>Le passage d'IPv4 à IPv6 crée des problèmes concrets en production : Render (offre gratuite) ne supporte pas IPv6 en sortie, ce qui bloque la connexion directe à Supabase. Ce type de problème n'apparaît jamais dans les cours mais est courant en entreprise.</p>
+            </div>
           </div>
         </li>
 
         <li class="ac-item">
           <button class="ac-accordion">AC21.06 | Travailler en équipe pour développer ses compétences professionnelles</button>
           <div class="ac-panel">
-            <p>Au sein de la DINMI (Direction Innovation Numérique et Management de l'Information) de la CASQ, j'ai travaillé en étroite collaboration avec Logan, chargé de mission infrastructure numérique, et Aurélien WAAG, directeur adjoint. J'ai participé aux réunions techniques, rendu compte de mes avancées et présenté mes travaux lors d'une session de restitution finale.</p>
-            <p>J'ai également su faire preuve d'autonomie : en l'absence de mon encadrant lors de la 4ème semaine, j'ai pris l'initiative de développer le projet Correctia, un pipeline d'analyse documentaire par IA, que j'ai mené de bout en bout.</p>
+            <p>Tout au long du semestre 4, j'ai travaillé en équipe sur plusieurs SAE : la <strong>SAE 4.Cyber.01</strong> réalisée en groupe avec répartition des tâches (configuration ASA, serveurs DMZ, tunnel IPsec), avec rédaction d'un Write-Up collaboratif documentant les choix techniques.</p>
+            <p>Durant mon <strong>stage à la CASQ</strong>, j'ai intégré l'équipe de la DINMI et travaillé en collaboration avec Logan (encadrant technique) et Aurélien WAAG (directeur adjoint). J'ai participé aux réunions techniques, rendu compte régulièrement de mes avancées et présenté mes travaux lors d'une session de restitution finale comparative entre n8n et Node-RED. J'ai également su faire preuve d'autonomie : lors de la 4ème semaine en l'absence de mon encadrant, j'ai pris l'initiative de développer le projet Correctia (pipeline d'analyse documentaire par IA) que j'ai mené de bout en bout.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Travail en équipe sur les SAE avec répartition des rôles, et intégration dans une équipe professionnelle avec restitution finale et initiative personnelle (projet Correctia).</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>Qu'être autonome ne signifie pas travailler seul : en stage, j'ai appris à identifier quand partager mes avancées avec l'équipe et quand avancer seul pour ne pas bloquer. La restitution finale m'a aussi appris à défendre des choix techniques devant un professionnel.</p>
+            </div>
           </div>
         </li>
 
@@ -122,39 +158,70 @@
         <li class="ac-item">
           <button class="ac-accordion">AC22.01 | Déployer et caractériser des systèmes de transmissions complexes</button>
           <div class="ac-panel">
-            <p>J'ai étudié et simulé la chaîne de transmission LoRaWAN complète : modulation LoRa à étalement de spectre permettant des portées de plusieurs kilomètres en environnement urbain avec une consommation énergétique minimale. J'ai caractérisé les trois couches du réseau (end-devices, gateways, Network Server) et validé le pipeline complet via simulation sur FlowFuse avec broker HiveMQ Cloud.</p>
-            <p>En cours de physique des télécoms (R403), j'ai travaillé sur la caractérisation d'antennes (paramètres S11, abaque de Smith, VSWR) et les bilans de liaison pour les faisceaux hertziens.</p>
+            <p>En <strong>R403 (Physique des Télécoms)</strong>, j'ai réalisé des TP de caractérisation d'antennes : mesure des paramètres S11 sur analyseur de réseau vectoriel, lecture et interprétation sur l'abaque de Smith, calcul du VSWR (Voltage Standing Wave Ratio) et adaptation d'impédance. J'ai également réalisé des TP sur les faisceaux hertziens : calcul de bilans de liaison, ellipsoïde de Fresnel, atténuation en espace libre et atténuation par la pluie selon ITU-R P.838.</p>
+            <p>Au <strong>stage CASQ</strong>, j'ai étudié et simulé la chaîne de transmission LoRaWAN complète : la modulation LoRa utilise un étalement de spectre chirp (CSS) permettant des portées de plusieurs kilomètres en milieu urbain avec une consommation minimale. J'ai validé le pipeline Inject → MQTT → InfluxDB via simulation sur FlowFuse avec broker HiveMQ Cloud, en injectant des données synthétiques de température (18–35 °C) et d'humidité (40–80 %).</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>TP de caractérisation d'antennes et de faisceaux hertziens en cours, et simulation d'une chaîne IoT LoRaWAN complète en stage avec validation des données de bout en bout.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>Le lien entre la couche physique radio (modulation LoRa, portée, RSSI) et les couches supérieures (protocole LoRaWAN, MQTT, traitement des données). Un problème de sensibilité d'antenne en bas de la chaîne peut rendre inutile toute l'infrastructure logicielle au-dessus.</p>
+            </div>
           </div>
         </li>
 
         <li class="ac-item">
           <button class="ac-accordion">AC22.02 | Mettre en place un accès distant sécurisé</button>
           <div class="ac-panel">
-            <p>Durant mon stage, j'ai mis en place des accès distants sécurisés à plusieurs niveaux : accès SSH aux équipements réseau de l'agglomération pour la configuration des switchs, accès sécurisé aux APIs REST via tokens d'authentification (InfluxDB, Supabase, Telegram Bot API), et authentification OAuth 2.0 pour l'intégration Google Docs.</p>
-            <p>J'ai également développé une Edge Function Deno sur Supabase exposée via endpoint HTTP sécurisé avec header d'authentification (x-internal-secret), permettant l'authentification SSO CAS de l'Université d'Artois via Playwright et Browserless Cloud.</p>
+            <p>En <strong>SAE 4.Cyber.01</strong>, j'ai configuré un tunnel VPN IPsec GRE site-à-site entre deux routeurs Cisco sur Packet Tracer, assurant le chiffrement des communications inter-sites. J'ai défini les paramètres IKE (Phase 1 : algorithme de chiffrement, groupe DH, durée de vie) et IPsec (Phase 2 : transform-set, ACL de chiffrement).</p>
+            <p>Durant mon <strong>stage CASQ</strong>, j'ai mis en place des accès distants sécurisés à plusieurs niveaux : connexion SSH aux switchs du parc réseau, authentification par token aux APIs REST (InfluxDB, Supabase, Telegram Bot API), OAuth 2.0 pour l'intégration Google Docs, et un endpoint HTTP sécurisé par header secret (<code>x-internal-secret</code>) pour la Edge Function Deno d'authentification SSO CAS.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Configuration VPN IPsec en SAE, et mise en place de multiples mécanismes d'authentification sécurisée en stage (SSH, tokens API, OAuth 2.0, header auth).</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>Les différents niveaux d'authentification à distance ne sont pas interchangeables : OAuth 2.0 est adapté à la délégation d'accès à des ressources tierces, les tokens API conviennent aux services machine-à-machine, et SSH reste incontournable pour l'administration système directe.</p>
+            </div>
           </div>
         </li>
 
         <li class="ac-item">
           <button class="ac-accordion">AC22.03 | Mettre en place une connexion multi-site via un réseau opérateur</button>
           <div class="ac-panel">
-            <p>Le projet IoT Smart City illustre une architecture multi-site réelle : les capteurs Milesight sont répartis sur le territoire de l'agglomération de Saint-Quentin (17 communes, 100 000 habitants), les passerelles LoRaWAN sont positionnées en points stratégiques pour assurer la couverture radio, et toutes les données convergent vers les serveurs centraux de la CASQ via le réseau opérateur LoRaWAN.</p>
+            <p>En <strong>SAE 4.Cyber.01</strong>, j'ai interconnecté deux sites d'entreprise distincts via un tunnel GRE encapsulé dans IPsec, simulant une connexion multi-site via réseau opérateur. Les deux sites disposaient chacun de leurs VLANs internes (Admin, Service, Production) et communiquaient de manière sécurisée via ce tunnel.</p>
+            <p>Le projet IoT Smart City de la <strong>CASQ</strong> illustre une architecture multi-site réelle à l'échelle d'un territoire : les capteurs Milesight sont répartis sur 17 communes de l'agglomération, les passerelles LoRaWAN sont positionnées en points stratégiques pour assurer la couverture radio, et toutes les données convergent vers les serveurs centraux via le réseau LoRaWAN. L'objectif était précisément de reprendre en interne cette gestion jusqu'alors externalisée à un opérateur tiers.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Configuration d'un tunnel GRE/IPsec inter-sites en SAE, et étude d'une architecture de collecte IoT territoriale multi-site réelle en stage.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>La dépendance à un opérateur tiers pour la gestion du trafic IoT a un coût réel (financier et en termes de souveraineté des données). Reprendre cette gestion en interne nécessite de maîtriser l'ensemble de la chaîne, du protocole radio jusqu'au stockage.</p>
+            </div>
           </div>
         </li>
 
         <li class="ac-item">
           <button class="ac-accordion">AC22.04 | Déployer des réseaux d'accès des opérateurs</button>
           <div class="ac-panel">
-            <p>J'ai étudié l'architecture de déploiement du réseau LoRaWAN de la CASQ, qui visait à reprendre en interne la gestion du trafic IoT jusqu'alors externalisée à un prestataire. Ce projet m'a permis de comprendre les enjeux de souveraineté des données, de maîtrise des coûts récurrents et de dépendances techniques vis-à-vis des opérateurs tiers.</p>
-            <p>En cours, j'ai également étudié les réseaux d'accès opérateurs (xDSL, fibre optique, réseaux cellulaires 4G/5G) et leurs architectures de déploiement.</p>
+            <p>En cours de <strong>R403</strong>, j'ai étudié les réseaux d'accès opérateurs : technologies xDSL (ADSL, VDSL), fibre optique (FTTH/FTTB/FTTN), réseaux câblés, et réseaux cellulaires (architecture RAN, cœur de réseau 4G/5G, interfaces Uu, S1, X2). J'ai réalisé des TP sur les lignes de transmission coaxiales (câble RG58) avec mesures par réflectométrie.</p>
+            <p>Au <strong>stage CASQ</strong>, j'ai étudié le déploiement du réseau LoRaWAN à l'échelle de l'agglomération : positionnement des passerelles Milesight UG65 pour assurer la couverture radio du territoire, configuration du Semtech Packet Forwarder pour la remontée UDP vers ChirpStack, et procédures d'enregistrement des capteurs (OTAA – Over The Air Activation) avec échange de clés dynamique.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Étude des réseaux d'accès opérateurs en cours avec TP réflectométrie, et étude du déploiement d'un réseau LoRaWAN territorial avec ses problématiques de couverture radio en stage.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>Le déploiement d'un réseau d'accès radio implique de bien comprendre les contraintes de propagation : en LoRaWAN, la portée théorique de plusieurs kilomètres est réduite en pratique par les bâtiments, la végétation et le relief urbain. Le positionnement des passerelles est un compromis entre couverture et coût.</p>
+            </div>
           </div>
         </li>
 
         <li class="ac-item">
           <button class="ac-accordion">AC22.05 | Capacité à questionner un cahier des charges RT</button>
           <div class="ac-panel">
-            <p>Logan m'a confié un exercice d'audit d'une architecture proposée par un ancien partenaire pour une plateforme GTB/Smart Grid. J'ai analysé de manière critique les choix technologiques (Docker, PostgreSQL/TimescaleDB, Node-RED, protocoles OT) et produit une note de synthèse structurée identifiant les risques par domaine.</p>
-            <p>Ma principale recommandation : restreindre Node-RED à un rôle de passerelle d'acquisition légère (ETL) et déporter la logique applicative vers un framework backend dédié (Python/FastAPI ou Node.js/NestJS), pour des raisons de maintenabilité, versioning et performance en production.</p>
+            <p>En <strong>SAE 4.Cyber.01</strong>, j'ai analysé un cahier des charges de sécurité réseau et proposé une architecture répondant aux contraintes imposées : segmentation par VLANs, règles de filtrage ASA, tunnel IPsec, DMZ, en justifiant chaque choix par rapport aux exigences du CDC.</p>
+            <p>Au <strong>stage CASQ</strong>, Logan m'a confié un exercice d'audit de l'architecture proposée par un ancien partenaire pour une plateforme GTB/Smart Grid. J'ai analysé de manière critique les choix technologiques (Docker + PostgreSQL/TimescaleDB + Node-RED + protocoles OT) et produit une note de synthèse structurée par domaine avec évaluation des risques. Ma recommandation principale : restreindre Node-RED à un rôle de passerelle ETL et déporter la logique applicative vers Python/FastAPI ou Node.js/NestJS pour des raisons de maintenabilité, versioning et performance.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Analyse d'un CDC et proposition d'architecture en SAE, et audit critique d'une architecture partenaire avec note de synthèse et recommandations en stage.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>Questionner un cahier des charges ou une architecture existante ne signifie pas tout remettre en question : il faut identifier précisément ce qui est pertinent, ce qui présente un risque, et formuler des recommandations réalistes et argumentées que l'interlocuteur peut réellement mettre en œuvre.</p>
+            </div>
           </div>
         </li>
 
@@ -175,40 +242,78 @@
         <li class="ac-item">
           <button class="ac-accordion">AC23.01 | Automatiser l'administration système avec des scripts</button>
           <div class="ac-panel">
-            <p>J'ai développé de nombreux scripts JavaScript dans les nœuds Function de Node-RED et Code de n8n pour automatiser des tâches d'administration : extraction et transformation de payloads JSON, règles d'alertes conditionnelles, conversion de formats (Markdown → HTML → Google Docs), aplatissement de structures JSON imbriquées complexes (notes de l'IUT).</p>
-            <p>J'ai également automatisé la sauvegarde des configurations réseau des switchs de la CASQ et exploré des templates n8n de backup automatisé vers GitHub.</p>
+            <p>En cours, j'ai développé des scripts Bash et Python pour automatiser des tâches d'administration : sauvegarde automatique de configurations, génération de rapports, monitoring de services.</p>
+            <p>Au <strong>stage CASQ</strong>, j'ai développé de nombreux scripts JavaScript dans les nœuds Function (Node-RED) et Code (n8n) pour automatiser des traitements : extraction et transformation de payloads JSON capteurs, règles d'alertes conditionnelles sur seuils de température, conversion de formats (Markdown → HTML → Google Docs API), et aplatissement de structures JSON imbriquées complexes (notes IUT organisées par semestre → UE → module → évaluation). J'ai également appliqué l'opérateur de chaînage optionnel (<code>?.</code>) pour gérer les cas limites sans erreur d'exécution (modules sans note, coefficients nuls).</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Scripts Bash/Python en cours, et scripts JavaScript de transformation de données dans des contextes asynchrones réels en stage (Node-RED, n8n).</p>
+              <p class="rlabel">Mes difficultés</p>
+              <p>La principale difficulté était la gestion des types de données dans InfluxDB : les champs de type string génèrent des erreurs lors du rafraîchissement automatique des panels Grafana. J'ai adopté une convention cohérente (champ numérique 0/1 pour les alertes) appliquée à tous les flux.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>L'automatisation en production impose une rigueur que les scripts de cours n'exigent pas : gestion des cas limites, des erreurs asynchrones, des timeouts (cold start Render), et documentation des conventions adoptées pour que d'autres puissent maintenir le code.</p>
+            </div>
           </div>
         </li>
 
         <li class="ac-item">
           <button class="ac-accordion">AC23.02 | Développer une application à partir d'un cahier des charges donné, pour le Web ou les périphériques mobiles</button>
           <div class="ac-panel">
-            <p>J'ai développé Correctia, une application web complète de traitement automatisé de documents numérisés. L'application orchestre un pipeline : réception d'un document scanné par email, analyse par Gemini Vision (IA multimodale), évaluation selon une grille de compétences configurable stockée en base de données, et restitution dans une interface web Next.js.</p>
-            <p>L'interface permet à l'utilisateur de consulter, ajuster et valider les résultats avant export. Le projet a été déployé sur Vercel avec un backend n8n self-hosted sur Render et une base PostgreSQL sur Supabase.</p>
+            <p>En <strong>SAE 4</strong>, j'ai développé des applications web dans le cadre des projets de l'IUT : interfaces de configuration, dashboards de supervision, utilisant HTML/CSS/JavaScript et des frameworks modernes.</p>
+            <p>Au <strong>stage CASQ</strong>, j'ai développé en autonomie <strong>Correctia</strong>, une application web complète de traitement automatisé de documents numérisés. Pipeline complet : document scanné envoyé par email → réception via Gmail Trigger n8n → analyse par Gemini Vision API → évaluation selon une grille de compétences configurable stockée dans Supabase → interface web Next.js pour consultation et validation des résultats. L'application a été déployée sur Vercel avec un backend n8n self-hosted sur Render et une base PostgreSQL Supabase, et comporte un workflow de validation déclenché par webhook depuis l'interface.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Développement d'une application web complète de A à Z en stage : pipeline backend n8n, API Gemini Vision, base de données Supabase, et interface front-end Next.js déployée sur Vercel.</p>
+              <p class="rlabel">Mes difficultés</p>
+              <p>La fiabilité de l'évaluation par IA : dans une première version, le modèle générait ses propres critères d'évaluation au lieu d'utiliser la grille configurée par l'utilisateur. Résolu en récupérant dynamiquement la grille depuis Supabase et en l'injectant dans le contexte du prompt.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>Développer une application utilisable en production est très différent d'un projet de cours : il faut gérer les erreurs silencieuses, les politiques de sécurité (RLS Supabase), les formats de réponse variables des APIs IA, et les contraintes d'hébergement gratuites.</p>
+            </div>
           </div>
         </li>
 
         <li class="ac-item">
           <button class="ac-accordion">AC23.03 | Utiliser un protocole réseau pour programmer une application client/serveur</button>
           <div class="ac-panel">
-            <p>J'ai implémenté le protocole MQTT dans n8n (nœuds MQTT Publish et MQTT Trigger) pour évaluer sa faisabilité comme outil d'intégration IoT. J'ai résolu une contrainte structurelle majeure : la limite de 3 600 secondes par session de workflow, qui rendait inutilisable une boucle naïve pour l'écoute continue des topics.</p>
-            <p>La solution développée — pattern Aggregate → Publish / Trigger → Split Out — contourne la contrainte en agrégeant les messages en un seul batch avant publication, puis en les redécomposant côté réception.</p>
+            <p>En cours, j'ai programmé des applications client/serveur utilisant les sockets TCP/UDP en Python : serveur d'écho, transfert de fichiers, protocole de messagerie simple.</p>
+            <p>Au <strong>stage CASQ</strong>, j'ai implémenté le protocole <strong>MQTT</strong> dans n8n (nœuds MQTT Publish et MQTT Trigger) pour évaluer sa faisabilité comme outil d'intégration IoT. J'ai identifié et résolu une contrainte structurelle majeure : la limite de 3 600 secondes par session de workflow n8n rend inutilisable une boucle naïve pour l'écoute continue des topics. La solution : pattern <strong>Aggregate → Publish / Trigger → Split Out</strong> — les trois valeurs capteurs sont agrégées en un seul batch avant publication, puis redécomposées côté réception par un nœud Split Out. Ce pattern contourne la contrainte de session tout en maintenant une faible latence.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Sockets TCP/UDP en cours, et implémentation MQTT dans n8n en stage avec résolution d'un problème d'architecture lié aux contraintes de la plateforme.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>Un protocole réseau comme MQTT est conçu pour un certain modèle d'exécution (flux continu). L'intégrer dans un outil qui fonctionne sur un modèle différent (exécutions discrètes comme n8n) nécessite d'adapter l'architecture plutôt que de forcer l'outil.</p>
+            </div>
           </div>
         </li>
 
         <li class="ac-item">
           <button class="ac-accordion">AC23.04 | Installer, administrer un système de gestion de données</button>
           <div class="ac-panel">
-            <p>J'ai installé et administré plusieurs systèmes de gestion de données durant mon stage : InfluxDB v2 Cloud (base de données temporelle) avec requêtes en langage Flux pour l'exploitation des métriques IoT, et PostgreSQL via Supabase pour la persistance des résultats de Correctia et des articles scrapés.</p>
-            <p>J'ai résolu des problèmes d'administration concrets : migration des données n8n de SQLite vers PostgreSQL externe, gestion des permissions (GRANT), configuration des schémas dédiés et gestion des politiques Row Level Security (RLS).</p>
+            <p>En cours, j'ai installé et administré des bases de données MySQL et PostgreSQL sous Linux : création de bases, gestion des utilisateurs et permissions (GRANT/REVOKE), requêtes SQL, et sauvegardes (mysqldump, pg_dump).</p>
+            <p>Au <strong>stage CASQ</strong>, j'ai administré deux types de bases de données en production : <strong>InfluxDB v2</strong> (base de données temporelle) avec requêtes en langage Flux pour l'exploitation des métriques IoT (filtrage par measurement, agrégation temporelle, export vers Grafana), et <strong>PostgreSQL via Supabase</strong> pour la persistance des données de Correctia et des articles scrapés. J'ai résolu des problèmes d'administration réels : migration n8n de SQLite vers PostgreSQL externe (variables <code>DB_POSTGRESDB_*</code>), configuration d'un schéma dédié avec permissions GRANT appropriées, et gestion des politiques Row Level Security (RLS) qui bloquaient silencieusement les écritures.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Administration MySQL/PostgreSQL en cours, et administration d'InfluxDB + PostgreSQL en production en stage avec résolution de problèmes de migration et de sécurité (RLS).</p>
+              <p class="rlabel">Mes difficultés</p>
+              <p>Les politiques RLS de Supabase bloquaient silencieusement les écritures sans message d'erreur explicite dans l'interface. Le diagnostic a nécessité d'inspecter les logs Supabase directement, puis de comprendre le mécanisme RLS pour désactiver temporairement la politique concernée.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>Les bases de données cloud modernes (Supabase) ajoutent des couches de sécurité (RLS, politiques d'accès) qui n'existent pas dans une installation PostgreSQL standard. Il faut les comprendre avant de déployer, pas après avoir passé des heures à chercher pourquoi les données ne s'écrivent pas.</p>
+            </div>
           </div>
         </li>
 
         <li class="ac-item">
           <button class="ac-accordion">AC23.05 | Accéder à un ensemble de données depuis une application et/ou un site web</button>
           <div class="ac-panel">
-            <p>J'ai intégré de nombreuses APIs REST dans mes workflows : OpenWeatherMap (données météo), InfluxDB (écriture/lecture de métriques), Telegram Bot API (notifications push), Google Docs API (export via OAuth 2.0), Gemini Vision API (analyse d'images), Supabase REST API (persistance), et Browserless Cloud (navigation headless).</p>
-            <p>J'ai également développé un scraper automatique d'articles (site de la Ville de Saint-Quentin) avec algorithme de scoring DOM en JavaScript et système anti-doublon, ainsi qu'un accès authentifié à l'API pédagogique de l'IUT via contournement SSO CAS par Playwright.</p>
+            <p>En cours, j'ai développé des applications web accédant à des APIs REST tierces : récupération et affichage de données JSON, gestion des en-têtes d'authentification, parsing des réponses.</p>
+            <p>Au <strong>stage CASQ</strong>, j'ai intégré de nombreuses APIs : OpenWeatherMap (données météo toutes les 10 min stockées dans InfluxDB), Telegram Bot API (notifications push), Google Docs API (export via OAuth 2.0 avec conversion Markdown → HTML → format Docs), Gemini Vision API (analyse d'images multimodale), Supabase REST API, et Browserless Cloud (navigation headless). J'ai également développé un <strong>scraper automatique</strong> d'articles (site Ville de Saint-Quentin) avec algorithme de scoring DOM en JavaScript (analyse de chaque nœud selon présence d'un lien href interne, longueur du texte, présence d'une date) et système anti-doublon par comparaison différentielle avec Supabase. J'ai enfin contourné un SSO CAS de l'Université d'Artois via Playwright + Edge Function Deno pour récupérer automatiquement mes notes de l'IUT.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Intégration d'APIs REST en cours, et intégration de 8+ APIs en stage dont Google Docs (OAuth 2.0), Gemini Vision, et scraping avec contournement SSO CAS.</p>
+              <p class="rlabel">Mes difficultés</p>
+              <p>L'API Google Docs n'accepte pas du HTML brut : elle fonctionne avec un modèle structuré (paragraphes, runs, styles imbriqués). J'ai dû développer un nœud Code JavaScript qui parcourt l'arbre HTML et construit dynamiquement les requêtes <code>insertText</code> et <code>updateTextStyle</code> correspondantes.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>Chaque API a ses propres contraintes de format et d'authentification qu'il faut lire attentivement avant de coder. La documentation officielle est indispensable, mais les cas limites (SSO avec redirections multiples, cookies de session, format Docs) ne sont souvent documentés qu'en cherchant des issues GitHub ou des forums spécialisés.</p>
+            </div>
           </div>
         </li>
 
@@ -229,30 +334,56 @@
         <li class="ac-item">
           <button class="ac-accordion">AC34.01Cyber | Participer activement à une analyse de risque pour définir une politique de sécurité pour une petite structure</button>
           <div class="ac-panel">
-            <p>J'ai conduit une analyse de sécurité complète de la topologie IoT de la CASQ. Cette analyse a mis en évidence plusieurs lacunes : absence de chiffrement MQTT en transit, services d'administration exposés sans HTTPS, protocoles OT (BACnet, KNX, Modbus) non chiffrés nativement, absence de segmentation réseau par VLAN pour les segments OT.</p>
-            <p>J'ai produit une note de synthèse structurée par domaine (infrastructure, middleware, couche OT/IT, APIs externes) avec une évaluation de chaque risque et des recommandations concrètes : MQTT over TLS port 8883, certificats X.509, VLAN dédié OT, mode de fonctionnement dégradé pour les APIs tierces.</p>
+            <p>En <strong>R401 (Infrastructures de Sécurité)</strong>, j'ai étudié les méthodologies d'analyse de risque (EBIOS, MITRE ATT&CK) et les composantes d'une politique de sécurité SI : identification des actifs, des menaces, des vulnérabilités, évaluation des risques et définition des mesures de traitement.</p>
+            <p>Au <strong>stage CASQ</strong>, j'ai conduit une analyse de sécurité de la topologie IoT de la structure. L'analyse a mis en évidence : absence de chiffrement MQTT en transit (données capteurs et credentials en clair), services d'administration sans HTTPS, protocoles OT (BACnet, KNX, Modbus) non chiffrés nativement, et absence de segmentation réseau pour les segments OT. J'ai produit une note de synthèse structurée par domaine (infrastructure/persistance, middleware applicatif, couche OT/IT, APIs externes) avec évaluation favorable/risque identifié et recommandations concrètes pour chaque domaine.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Étude des méthodologies d'analyse de risque en cours, et conduite d'une analyse de sécurité réelle d'une topologie IoT en stage avec note de synthèse structurée remise à l'encadrant.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>Une analyse de risque n'est utile que si elle aboutit à des recommandations priorisées et réalistes. Il est inutile de recommander MQTT over TLS si l'équipe n'a pas les ressources pour gérer une PKI interne : il faut adapter les préconisations au contexte réel de la structure.</p>
+            </div>
           </div>
         </li>
 
         <li class="ac-item">
           <button class="ac-accordion">AC34.02Cyber | Mettre en œuvre des outils avancés de sécurisation d'une infrastructure du réseau</button>
           <div class="ac-panel">
-            <p>Dans le cadre du projet Correctia et de l'infrastructure de scraping, j'ai mis en œuvre plusieurs mécanismes de sécurisation avancés : chiffrement AES des credentials sensibles dans n8n (Header Auth Account), politiques Row Level Security (RLS) sur Supabase pour contrôler l'accès aux données, restriction des clés API exposées côté client, et validation humaine (Human in the Loop) avant publication de données sensibles.</p>
-            <p>J'ai également configuré un endpoint HTTP sécurisé avec authentification par header secret (x-internal-secret) pour la Edge Function Deno d'authentification SSO.</p>
+            <p>En <strong>SAE 4.Cyber.01</strong>, j'ai mis en œuvre des outils de sécurisation réseau avancés sur Cisco Packet Tracer : pare-feu ASA avec ACL et zones de sécurité (inside/outside/DMZ), tunnel VPN IPsec site-à-site, contre-mesures STP (BPDUGuard, PortFast, Root Guard) suite à l'attaque Root Bridge takeover.</p>
+            <p>Au <strong>stage CASQ</strong>, j'ai mis en œuvre plusieurs mécanismes de sécurisation dans les applications déployées : chiffrement AES des credentials sensibles dans n8n (système de credentials chiffrés Header Auth Account), politiques Row Level Security sur Supabase, restriction des clés API exposées côté client, et validation humaine (Human in the Loop) avant publication via Telegram (boutons Approuver/Rejeter) dans le pipeline de génération de rapports IA.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Configuration ASA, VPN IPsec et contre-mesures STP en SAE, et sécurisation applicative multi-couches en stage (chiffrement credentials, RLS, HITL).</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>La sécurisation d'une infrastructure ne se limite pas au réseau : les applications déployées dessus doivent elles aussi être sécurisées. Un VPN parfait ne protège pas des credentials stockés en clair dans une variable d'environnement non chiffrée ou d'une politique RLS désactivée.</p>
+            </div>
           </div>
         </li>
 
         <li class="ac-item">
           <button class="ac-accordion">AC34.03Cyber | Sécuriser les systèmes d'exploitation</button>
           <div class="ac-panel">
-            <p>Sur les instances cloud déployées (n8n self-hosted sur Render), j'ai appliqué des bonnes pratiques de sécurisation : stockage des secrets dans des variables d'environnement chiffrées (DB_POSTGRESDB_*, N8N_ENCRYPTION_KEY, N8N_BASIC_AUTH_*), désactivation de la sauvegarde des exécutions réussies pour éviter la persistance de données sensibles (cookies de session CAS) dans les logs, et configuration d'une authentification basique pour l'accès à l'interface d'administration n8n.</p>
+            <p>En <strong>R401</strong> et lors des TP sécurité, j'ai appliqué des mesures de durcissement système sur Linux : gestion des droits utilisateurs et sudo, configuration du pare-feu iptables/ufw, désactivation des services inutiles, mise à jour des paquets, et analyse des logs système (journalctl, /var/log/auth.log).</p>
+            <p>Au <strong>stage CASQ</strong>, sur l'instance n8n self-hosted déployée sur Render, j'ai appliqué des bonnes pratiques de sécurisation système : stockage des secrets dans des variables d'environnement chiffrées (jamais en clair dans le code), activation de l'authentification basique n8n (<code>N8N_BASIC_AUTH_ACTIVE</code>, <code>N8N_BASIC_AUTH_USER</code>, <code>N8N_BASIC_AUTH_PASSWORD</code>), et désactivation de la sauvegarde des exécutions réussies (<code>Do not save</code>) pour éviter la persistance de données sensibles (cookies de session CAS) dans les logs après chaque run.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Durcissement Linux en cours/TP, et sécurisation d'une instance n8n cloud en stage avec gestion des secrets par variables d'environnement et désactivation des logs d'exécution sensibles.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>Les secrets ne doivent jamais apparaître dans les logs. En stage, j'ai compris que les cookies de session récupérés via Playwright sont des données aussi sensibles que des mots de passe : les laisser dans les logs d'exécution n8n les exposerait à quiconque ayant accès à l'instance.</p>
+            </div>
           </div>
         </li>
 
         <li class="ac-item">
           <button class="ac-accordion">AC34.04Cyber | Proposer une architecture sécurisée de système d'information pour une petite structure</button>
           <div class="ac-panel">
-            <p>À la suite de mon audit de l'architecture GTB/Smart Grid de l'ancien partenaire, j'ai proposé une architecture sécurisée reposant sur : isolation réseau stricte par VLAN dédié pour les segments OT, généralisation du chiffrement TLS pour les échanges MQTT (MQTTS sur port 8883), déport de la logique applicative depuis Node-RED vers un backend dédié (Python/FastAPI), définition d'un mode de fonctionnement dégradé pour les APIs tierces, et formalisation d'une stratégie de sauvegarde et de PRA/PCA pour les volumes Docker.</p>
+            <p>En <strong>SAE 4.Cyber.01</strong>, j'ai conçu une architecture SI sécurisée deux sites : VLANs Admin/Service/Production, DMZ avec serveurs HTTP/HTTPS/DNS, pare-feu ASA avec ACL et inspection, tunnel IPsec inter-sites, et plan d'adressage cohérent. L'architecture a été documentée dans un Write-Up complet.</p>
+            <p>Au <strong>stage CASQ</strong>, à la suite de mon audit de l'architecture GTB/Smart Grid du partenaire, j'ai proposé une architecture cible sécurisée : isolation réseau stricte par VLAN dédié OT, MQTT over TLS (port 8883) généralisé, déport de la logique applicative de Node-RED vers un backend dédié (Python/FastAPI), définition d'un mode de fonctionnement dégradé pour les APIs tierces, et formalisation d'une stratégie de sauvegarde et de PRA/PCA pour les volumes Docker. Cette recommandation a été remise à Logan avec une préconisation de planifier un atelier technique avec le partenaire.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Conception d'une architecture SI sécurisée complète en SAE, et proposition d'une architecture cible après audit en stage avec recommandations documentées.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>Proposer une architecture sécurisée n'est pas suffisant : il faut aussi prévoir la transition depuis l'existant. En stage, l'architecture partenaire était déjà partiellement déployée — mes recommandations devaient être applicables progressivement, sans tout remettre à plat.</p>
+            </div>
           </div>
         </li>
 
@@ -273,32 +404,56 @@
         <li class="ac-item">
           <button class="ac-accordion">AC35.01Cyber | Surveiller l'activité du système d'information</button>
           <div class="ac-panel">
-            <p>J'ai mis en place un système de supervision complet de l'infrastructure IoT de la CASQ : dashboards Grafana connectés à InfluxDB pour la visualisation en temps réel des métriques capteurs (température, humidité, alertes), un onglet météo enrichi via l'API OpenWeatherMap (rose des vents, pression, visibilité, précipitations), et un workflow n8n de monitoring de disponibilité des services web avec détection des erreurs HTTP (5xx) et enregistrement des historiques.</p>
-            <p>Un bot Telegram de supervision a été intégré au flux Node-RED pour remonter en temps réel l'état des capteurs simulés et les alertes SSL (certificats expirants).</p>
+            <p>En <strong>R401</strong>, j'ai étudié les outils de supervision SI : principes SIEM (collecte, corrélation, alerting), protocole SNMP, syslog, et outils de monitoring réseau.</p>
+            <p>Au <strong>stage CASQ</strong>, j'ai mis en place un système de supervision complet de l'infrastructure IoT : dashboards <strong>Grafana</strong> connectés à InfluxDB via token d'authentification, avec panels de visualisation en temps réel (courbes de température/humidité, jauges, tableau des alertes horodatées), onglet météo enrichi via OpenWeatherMap (rose des vents, pression atmosphérique, visibilité, précipitations), et système d'alerting Grafana (seuils de déclenchement, intégration Pushbullet). Un workflow n8n de monitoring de disponibilité des services web interroge séquentiellement des URLs et différencie les erreurs de connexion (timeout, DNS) des erreurs HTTP (5xx), avec enregistrement des historiques dans InfluxDB pour analyse des tendances.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Étude des outils SIEM/SNMP en cours, et déploiement d'un système de supervision complet (Grafana + alerting + monitoring HTTP + bot Telegram) en stage.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>Un système de supervision n'est utile que si les alertes arrivent aux bonnes personnes au bon moment. J'ai compris l'importance de différencier les alertes critiques (service down) des alertes informationnelles (seuil de température) pour éviter la fatigue d'alerte.</p>
+            </div>
           </div>
         </li>
 
         <li class="ac-item">
           <button class="ac-accordion">AC35.02Cyber | Appliquer une méthodologie de tests de pénétration</button>
           <div class="ac-panel">
-            <p>Dans le cadre de mon cours de cybersécurité (SAE4.Cyber.01), j'ai réalisé une attaque STP (Spanning Tree Protocol) de type Root Bridge takeover sur un réseau simulé Cisco Packet Tracer. J'ai analysé les vulnérabilités d'un réseau à deux sites avec VLANs, exécuté la prise de contrôle du Root Bridge par manipulation des BPDUs, et documenté l'attaque dans un Write-Up complet.</p>
-            <p>J'ai ensuite déployé les contre-mesures appropriées : BPDUGuard, PortFast et Root Guard pour sécuriser les ports d'accès et de liaison.</p>
+            <p>Dans la <strong>SAE 4.Cyber.01</strong>, j'ai appliqué une méthodologie d'attaque structurée sur le réseau simulé Cisco Packet Tracer. J'ai réalisé une attaque STP (Spanning Tree Protocol) de type Root Bridge takeover : analyse du réseau cible pour identifier le Root Bridge actuel, envoi de BPDUs frauduleux avec une priorité inférieure (valeur plus basse = priorité plus haute en STP) pour que mon équipement soit élu Root Bridge, puis capture du trafic normalement non visible depuis ce segment. J'ai documenté chaque étape dans un Write-Up complet avec captures d'écran.</p>
+            <p>Cette expérience m'a permis de comprendre concrètement pourquoi les contre-mesures STP (BPDUGuard, PortFast, Root Guard) sont indispensables sur tout réseau commuté en production.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Attaque STP Root Bridge takeover sur réseau simulé Packet Tracer, documentée dans un Write-Up avec analyse des vecteurs exploités et contre-mesures déployées.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>STP est un protocole conçu pour la disponibilité du réseau, pas pour la sécurité : il accepte par défaut les BPDUs de n'importe quel équipement. Sans BPDUGuard activé sur les ports d'accès, n'importe quel switch branché sur le réseau peut potentiellement devenir Root Bridge et intercepter du trafic.</p>
+            </div>
           </div>
         </li>
 
         <li class="ac-item">
           <button class="ac-accordion">AC35.03Cyber | Réagir face à un incident de sécurité</button>
           <div class="ac-panel">
-            <p>Lors de mon stage, j'ai été confronté à plusieurs incidents techniques en conditions réelles de production et ai dû les résoudre méthodiquement : perte de données n8n à chaque redémarrage Render (identifié → migration PostgreSQL), dysfonctionnement silencieux de l'interface Correctia (tracé vers politique RLS Supabase bloquant l'écriture), déploiement Vercel renvoyant une erreur 404 (identifié → preset framework incorrect).</p>
-            <p>Chaque incident a fait l'objet d'une analyse de cause racine, d'une résolution documentée et d'une mesure préventive pour éviter la récurrence.</p>
+            <p>En cours de <strong>R401</strong>, j'ai étudié les procédures de réponse à incident : identification, confinement, éradication, restauration et retour d'expérience (PICERL). J'ai également étudié les types de malwares (virus, worm, ransomware, spyware) et leur comportement réseau.</p>
+            <p>Au <strong>stage CASQ</strong>, j'ai été confronté à plusieurs incidents techniques en conditions de production et les ai résolus méthodiquement : <em>Incident 1</em> — perte de données n8n à chaque redémarrage Render (diagnostic : SQLite embarquée réinitialisée → solution : migration PostgreSQL externe) ; <em>Incident 2</em> — dysfonctionnement silencieux de l'interface Correctia sans message d'erreur (diagnostic : politique RLS Supabase bloquant l'écriture → solution : désactivation temporaire + réactivation contrôlée) ; <em>Incident 3</em> — déploiement Vercel renvoyant 404 (diagnostic : preset framework "Other" au lieu de "Next.js" → solution : reconfiguration du projet). Chaque incident a fait l'objet d'une analyse de cause racine et d'une mesure préventive.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Étude des procédures PICERL en cours, et résolution méthodique de 3 incidents de production en stage avec analyse de cause racine et mesures correctives.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>La réaction à un incident commence toujours par l'identification correcte de la cause : en stage, plusieurs incidents semblaient différents en surface (données perdues, interface silencieuse, 404) mais avaient tous une cause racine identifiable avec les bons outils de diagnostic (logs Render, console Supabase, logs Vercel).</p>
+            </div>
           </div>
         </li>
 
         <li class="ac-item">
           <button class="ac-accordion">AC35.04Cyber | Administrer les outils de surveillance du système d'information</button>
           <div class="ac-panel">
-            <p>J'ai administré Grafana comme outil central de surveillance : configuration des data sources (InfluxDB via token d'authentification), création de panels (courbes temporelles, jauges, tableaux d'alertes), configuration du système d'alerting avec seuils de déclenchement et intégration Pushbullet pour les notifications mobiles.</p>
-            <p>J'ai également identifié lors de la restitution finale des pistes d'intégration entre Zabbix (supervision réseau existant à la DINMI) et n8n : retransmission automatique des alertes Zabbix vers Webex, récapitulatif quotidien des incidents réseau, enrichissement par synthèse IA.</p>
+            <p>En <strong>R401</strong>, j'ai étudié l'administration d'outils de surveillance SI : configuration de sondes SNMP, collecte de logs syslog, et principes d'administration d'un SIEM (règles de corrélation, tableaux de bord, gestion des alertes).</p>
+            <p>Au <strong>stage CASQ</strong>, j'ai administré <strong>Grafana</strong> comme outil central de surveillance : configuration des data sources (InfluxDB via URL + token), création de panels avancés (courbes temporelles, rose des vents, jauges synthétiques), configuration du système d'alerting avec règles de déclenchement sur seuils et intégration Pushbullet pour les notifications mobiles. Lors de la restitution finale, j'ai identifié des pistes d'intégration entre <strong>Zabbix</strong> (outil de supervision réseau déjà utilisé par la DINMI) et n8n : retransmission automatique des alertes Zabbix vers Webex, récapitulatif quotidien des incidents réseau nocturnes, enrichissement par synthèse IA contextuelle.</p>
+            <div class="reflexion">
+              <p class="rlabel">Ce que j'ai fait</p>
+              <p>Étude de l'administration SNMP/SIEM en cours, et administration complète de Grafana en stage (data sources, panels, alerting) avec proposition d'intégration Zabbix/n8n.</p>
+              <p class="rlabel">Ce que j'en ai appris</p>
+              <p>Un outil de surveillance comme Grafana n'est efficace que si ses data sources sont correctement configurées et ses seuils d'alerte calibrés sur des valeurs réalistes. Des seuils trop bas génèrent du bruit ; des seuils trop hauts ratent les incidents. La calibration est un travail continu basé sur l'observation du comportement normal du système.</p>
+            </div>
           </div>
         </li>
 
@@ -313,38 +468,36 @@
       <div class="stage-icon">🏢</div>
       <div>
         <h2>Stage professionnel – S4</h2>
-        <p class="stage-lieu">Communauté d'Agglomération de Saint-Quentin · DINMI · 8 semaines</p>
+        <p class="stage-lieu">Communauté d'Agglomération de Saint-Quentin · DINMI · 7 avril – 29 mai 2025 · 8 semaines</p>
       </div>
     </div>
 
     <div class="stage-grid">
 
       <div class="stage-card">
-        <h3>Contexte & Structure d'accueil</h3>
-        <p>Stage de 2ème année de BUT R&T effectué du <strong>7 avril au 29 mai</strong> au sein de la <strong>DINMI</strong> (Direction Innovation Numérique et Management de l'Information) de la <strong>Communauté d'Agglomération de Saint-Quentin</strong> (CASQ), EPCI regroupant 17 communes et plus de 100 000 habitants dans l'Aisne.</p>
-        <p>Encadrement : <strong>Aurélien WAAG</strong> (Directeur Adjoint DINMI) et <strong>Logan LAGUILLET</strong> (Chargé de mission infrastructure numérique).</p>
+        <h3>Structure d'accueil</h3>
+        <p>La <strong>CASQ</strong> (Communauté d'Agglomération de Saint-Quentin) est un EPCI regroupant 17 communes et plus de 100 000 habitants dans l'Aisne. La <strong>DINMI</strong> (Direction Innovation Numérique et Management de l'Information) est le service transverse chargé de la transformation numérique : réseaux locaux, infrastructure serveur, parcs informatiques, et déploiement IoT Smart City.</p>
+        <p>Encadrement : <strong>Aurélien WAAG</strong> – Directeur Adjoint DINMI · <strong>Logan LAGUILLET</strong> – Chargé de mission infrastructure numérique</p>
       </div>
 
       <div class="stage-card">
-        <h3>Mission principale – Infrastructure IoT Smart City</h3>
-        <p>Conception et validation d'une architecture permettant à la CASQ de reprendre en interne la gestion de son trafic IoT (capteurs Milesight LoRaWAN), jusqu'alors externalisée à un prestataire. Objectifs : réduction des coûts, élimination des dépendances techniques et souveraineté des données.</p>
-        <p><strong>Stack déployée :</strong> ChirpStack (Network Server) · Eclipse Mosquitto (broker MQTT) · Node-RED sur FlowFuse · InfluxDB v2 Cloud · Grafana</p>
+        <h3>Partie 1 – Infrastructure IoT Smart City (sem. 1-2)</h3>
+        <p>Conception et validation d'une architecture permettant à la CASQ de reprendre en interne la gestion de son trafic IoT LoRaWAN (capteurs Milesight), jusqu'alors externalisée. Simulation de la chaîne complète sur FlowFuse + HiveMQ, stockage InfluxDB, dashboards Grafana avec alerting Pushbullet, bot Telegram de supervision, et analyse de sécurité de la topologie IoT.</p>
+        <p><strong>Stack :</strong> ChirpStack · Mosquitto · Node-RED · InfluxDB v2 · Grafana</p>
       </div>
 
       <div class="stage-card">
-        <h3>Automatisation & IA avec n8n</h3>
-        <p>Exploration et mise en œuvre de l'outil d'automatisation <strong>n8n</strong> pour les besoins de la DINMI : workflows météo avec alertes Telegram, supervision de services web (uptime), pipeline de génération automatique de rapports avec LLM et export Google Docs via OAuth 2.0, intégration Human in the Loop.</p>
-        <p>Développement autonome de <strong>Correctia</strong> : application web complète d'analyse documentaire par IA (Gmail → Gemini Vision → Supabase → Next.js/Vercel).</p>
+        <h3>Partie 2 – Automatisation & IA avec n8n (sem. 3-5)</h3>
+        <p>Exploration de n8n pour les besoins de la DINMI : workflows météo avec alertes Telegram, monitoring de services web (uptime HTTP), pipeline LLM de génération automatique de rapports avec export Google Docs (OAuth 2.0) et validation Human in the Loop. Développement autonome de <strong>Correctia</strong> : pipeline complet d'analyse documentaire par IA (Gmail → Gemini Vision → Supabase → Next.js/Vercel).</p>
       </div>
 
       <div class="stage-card">
-        <h3>Web Scraping & Infrastructure sécurisée</h3>
-        <p>Mise en place d'une infrastructure de scraping sécurisée avec <strong>Browserless Cloud</strong> pour la surveillance automatique des publications du site de la Ville de Saint-Quentin, avec algorithme de scoring DOM et système anti-doublon Supabase.</p>
-        <p>Extension du cas d'usage : scraper authentifié sur le portail pédagogique de l'IUT via <strong>SSO CAS + Playwright + Edge Function Deno</strong>, avec notification Telegram automatique à chaque nouvelle note publiée.</p>
+        <h3>Partie 3 – MQTT sur n8n & Web Scraping sécurisé (sem. 6-8)</h3>
+        <p>Implémentation MQTT dans n8n avec résolution du problème de limite de session (pattern Aggregate/Split). Scraper automatique d'articles (Ville de Saint-Quentin) via Browserless Cloud avec algorithme de scoring DOM et déduplication Supabase. Extension : scraping authentifié du portail pédagogique IUT via <strong>SSO CAS + Playwright + Edge Function Deno</strong>, avec notification Telegram automatique à chaque nouvelle note.</p>
       </div>
 
       <div class="stage-card stage-card-full">
-        <h3>Compétences acquises & Bilan</h3>
+        <h3>Compétences techniques mobilisées</h3>
         <div class="competences-tags">
           <span class="tag">LoRaWAN / MQTT</span>
           <span class="tag">Node-RED</span>
@@ -360,8 +513,10 @@
           <span class="tag">APIs REST</span>
           <span class="tag">Docker / Cloud</span>
           <span class="tag">Deno / Edge Functions</span>
+          <span class="tag">Gemini Vision API</span>
+          <span class="tag">Web Scraping</span>
         </div>
-        <p style="margin-top:1rem;">Ce stage a confirmé mon orientation vers l'<strong>infrastructure numérique, l'automatisation et la cybersécurité des systèmes d'information</strong>. La diversité des missions — des protocoles radio IoT aux APIs web modernes en passant par la sécurité des sessions — m'a permis d'appréhender concrètement le métier d'administrateur réseaux et systèmes dans un contexte de transformation numérique territoriale.</p>
+        <p style="margin-top:1rem;">Ce stage a confirmé mon orientation vers l'<strong>infrastructure numérique, l'automatisation et la cybersécurité des SI</strong>. La diversité des missions — protocoles radio IoT, APIs web modernes, sécurité des sessions, déploiement cloud — m'a permis d'appréhender concrètement le métier d'administrateur réseaux et systèmes dans un contexte de transformation numérique territoriale.</p>
       </div>
 
     </div>
@@ -378,12 +533,10 @@
     btn.onclick = function () {
       const panel = this.nextElementSibling;
       const isOpen = this.classList.contains("active");
-
       this.closest(".ac-list").querySelectorAll(".ac-accordion").forEach(b => {
         b.classList.remove("active");
         b.nextElementSibling.style.maxHeight = null;
       });
-
       if (!isOpen) {
         this.classList.add("active");
         panel.style.maxHeight = panel.scrollHeight + "px";
