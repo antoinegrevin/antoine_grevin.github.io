@@ -129,23 +129,10 @@ main .competences #sem1 {
     grid-column: 1 / -1;
 }
 
-/* Connecter et Programmer : chacun 1 colonne sur 2 */
-main .competences #sem2 {
-    grid-column: 1 / 2;
-}
-
-main .competences #sem3 {
-    grid-column: 2 / 3;
-}
-
-/* Sécuriser et Surveiller : côte à côte comme Connecter/Programmer */
-main .competences #sem4 {
-    grid-column: 1 / 2;
-}
-
-main .competences #sem5 {
-    grid-column: 2 / 3;
-}
+main .competences #sem2 { grid-column: 1 / 2; }
+main .competences #sem3 { grid-column: 2 / 3; }
+main .competences #sem4 { grid-column: 1 / 2; }
+main .competences #sem5 { grid-column: 2 / 3; }
 
 /* Card */
 .semestre.card {
@@ -253,17 +240,110 @@ main .competences #sem5 {
 .ac-panel {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.35s ease;
     background: #fff;
     border-top: 1px solid #dce8f7;
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #2a3550;
     padding: 0 1.1rem;
+    line-height: 1.65;
 }
 
-.ac-panel p,
-.ac-panel ul {
-    margin: 0.8rem 0;
+.ac-panel p {
+    margin: 0.75rem 0;
+}
+
+.ac-panel p + p {
+    border-top: 1px dashed #e8eef8;
+    padding-top: 0.65rem;
+}
+
+/* ============================
+   SECTION STAGE
+   ============================ */
+.stage-section {
+    margin-top: 3rem;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(70,105,150,0.08);
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.stage-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 2px solid #e1e8f7;
+    margin-bottom: 2rem;
+}
+
+.stage-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.stage-header h2 {
+    color: #005ba7;
+    font-size: 1.6rem;
+    margin: 0 0 0.2rem;
+}
+
+.stage-lieu {
+    color: #7a90b0;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.stage-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.stage-card {
+    background: #f4f8ff;
+    border-left: 4px solid #0078d4;
+    border-radius: 0 10px 10px 0;
+    padding: 1.3rem 1.5rem;
+    font-size: 0.95rem;
+    color: #2a3550;
+    line-height: 1.65;
+}
+
+.stage-card-full {
+    grid-column: 1 / -1;
+    border-left-color: #005ba7;
+}
+
+.stage-card h3 {
+    color: #005ba7;
+    font-size: 1.05rem;
+    margin: 0 0 0.7rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #dce8f7;
+}
+
+.stage-card p {
+    margin: 0.5rem 0 0;
+}
+
+/* Tags compétences */
+.competences-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.3rem;
+}
+
+.tag {
+    background: #0078d4;
+    color: #fff;
+    border-radius: 20px;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 /* Footer */
@@ -296,8 +376,14 @@ footer {
     main .competences #sem4,
     main .competences #sem5 {
         grid-column: span 1;
-        justify-self: stretch;
-        width: auto;
+    }
+
+    .stage-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stage-card-full {
+        grid-column: span 1;
     }
 }
 
@@ -308,6 +394,10 @@ footer {
 
     .intro {
         margin: 1.5rem 0.8rem;
+    }
+
+    .stage-section {
+        padding: 1.5rem 1rem;
     }
 
     nav ul {
